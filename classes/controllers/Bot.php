@@ -6,7 +6,7 @@ class Bot extends \Basic\Basic {
 	 * точка входа чат-бота
 	 */
 	public static function main() {
-		if ($_POST['message']['entities'][0]['type'] != 'bot_command' && $_POST['callback_query']['data'] != 'checkSubscribe') {
+		if ($_POST['message']['entities'][0]['type'] != 'bot_command' && $_POST['callback_query']['data'] != 'checkSubscribe' && $_POST['message']['from']['id'] != $_POST['message']['chat']['id']) {
 			exit();
 		}
 		$message = $_POST['message'] ? $_POST['message']['text'] : $_POST['callback_query']['data'];
@@ -150,7 +150,6 @@ class Bot extends \Basic\Basic {
 	 */
 	private static function checkSubscribe($id) {
 		// return true;
-
 		$data = [
 			'user_id' => $id,
 			'chat_id' => -1001191727950 //-1001776797334

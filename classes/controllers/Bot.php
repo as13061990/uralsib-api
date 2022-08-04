@@ -49,7 +49,8 @@ class Bot extends \Basic\Basic {
 		$chat = $_POST['message'] ? $_POST['message']['chat']['id'] : $_POST['callback_query']['message']['chat']['id'];
 		
 		if (is_numeric($id)) {
-			parent::checkUser($id);
+			$user = parent::checkUser($id);
+			self::checkUsername($user, $_POST['message']['from']['username']);
 
 			if (!self::checkSubscribe($id)) {
 				$data = [
@@ -101,7 +102,8 @@ class Bot extends \Basic\Basic {
 		$chat = $_POST['message'] ? $_POST['message']['chat']['id'] : $_POST['callback_query']['message']['chat']['id'];
 		
 		if (is_numeric($id)) {
-			parent::checkUser($id);
+			$user = parent::checkUser($id);
+			self::checkUsername($user, $_POST['message']['from']['username']);
 
 			if (!self::checkSubscribe($id)) {
 				$data = [
@@ -163,5 +165,13 @@ class Bot extends \Basic\Basic {
 			return true;
 		}
 		return false;
+	}
+
+	private static function checkUsername($user, $name) {
+		if ($name && $user['username'] != $name) {
+			$db = parent::getDb();
+			$db->query("UPDATE users SET username = {?} WHERE id = {?}", array($name, $user['id']));
+			parent::log('юзернейм');
+		}
 	}
 }

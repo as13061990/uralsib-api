@@ -46,6 +46,7 @@
 		.new-status { background: #ff9494; }
 		.done-status { background: #98e38d; }
 		.in-process { background: #87cefa; }
+		.unixtime { display: none }
 	</style>
 </head>
 <body>
@@ -77,6 +78,7 @@
 				<thead>
 					<tr>
 						<td>id</td>
+						<td>юзернейм</td>
 						<td>лучший результат</td>
 						<td>дата и время прохождения</td>
 					</tr>
@@ -85,8 +87,9 @@
 				<? foreach ($users as $user) { ?>
 					<tr>
 						<td><?= $user['id'] ?></td>
+						<td><?= $user['username'] ?></td>
 						<td><?= $user['best_result'] ?></td>
-						<td><?= $user['time'] !== null ? date('Y.m.d H:i:s', $user['time']) : '' ?></td>
+						<td><span class="unixtime"><?= (int) $user['time'] ?></span><span><?= $user['time'] !== null ? date('Y.m.d H:i:s', $user['time']) : '' ?></span></td>
 					</tr>
 				<? } ?>
 				</tbody>

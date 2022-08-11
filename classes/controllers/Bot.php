@@ -171,7 +171,6 @@ class Bot extends \Basic\Basic {
 		if ($name && $user['username'] != $name) {
 			$db = parent::getDb();
 			$db->query("UPDATE users SET username = {?} WHERE id = {?}", array($name, $user['id']));
-			parent::log('юзернейм');
 		}
 	}
 }

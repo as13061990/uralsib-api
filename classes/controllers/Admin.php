@@ -26,4 +26,16 @@ class Admin extends \Basic\Basic {
 			'users' => $users
 		));
 	}
+
+	/**
+	 * Часовая статистика
+	 */
+	public static function stats() {
+		$db = parent::getDb();
+		$stats = $db->select("SELECT * FROM stats");
+
+		echo parent::loadView('templates/stats.php', array(
+			'stats' => $stats
+		));
+	}
 }

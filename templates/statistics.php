@@ -57,7 +57,13 @@
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle Navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<div class="collapse navbar-collapse" id="basicExampleNav"></div>
+			<div class="collapse navbar-collapse" id="basicExampleNav">
+				<ul class="navbar-nav mr-auto smooth-scroll">
+					<li class="nav-item">
+						<a href="/stats" class="nav-link waves-effect waves-light">Часовая статистика</a>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</nav>
 	<div style="width:100px; height: 100px;"></div>

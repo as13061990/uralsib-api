@@ -151,10 +151,9 @@ class Bot extends \Basic\Basic {
 	 * Проверка подписки на группу
 	 */
 	private static function checkSubscribe($id) {
-		// return true;
 		$data = [
 			'user_id' => $id,
-			'chat_id' => -1001191727950 //-1001776797334
+			'chat_id' => -1001776797334
 		];
 		$result = self::sendTelegram('getChatMember', $data);
 		

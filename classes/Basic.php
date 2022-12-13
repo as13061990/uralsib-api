@@ -71,10 +71,10 @@ class Basic extends \DB\Db {
 		exit();
 	}
 
-  /**
-   * Проверка пользователя в базе
-   */
-  protected static function checkUser($id) {
+	/**
+	 * Проверка пользователя в базе
+	 */
+	protected static function checkUser($id) {
 		$db = parent::getDb();
 		$user = $db->select("SELECT * FROM users WHERE id = {?}", array($id))[0];
 
@@ -82,7 +82,7 @@ class Basic extends \DB\Db {
 			$db->query("INSERT IGNORE INTO users SET id = {?}", array($id));
 		}
 		return $user;
-  }
+	}
 }
 
 ?>

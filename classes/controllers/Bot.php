@@ -86,7 +86,7 @@ class Bot extends \Basic\Basic {
 						[
 							[
 								'text' => 'Играть',
-								'web_app' => ['url' => 'https://uralsib.irsapp.ru']
+								'web_app' => ['url' => 'https://client.uralsib.irsapp.ru']
 							]
 						]
 					]
@@ -139,7 +139,7 @@ class Bot extends \Basic\Basic {
 						[
 							[
 								'text' => 'Играть',
-								'web_app' => ['url' => 'https://uralsib.irsapp.ru']
+								'web_app' => ['url' => 'https://client.uralsib.irsapp.ru']
 							]
 						]
 					]
@@ -190,7 +190,7 @@ class Bot extends \Basic\Basic {
 					[
 						[
 							'text' => 'Играть',
-							'web_app' => ['url' => 'https://uralsib.irsapp.ru']
+							'web_app' => ['url' => 'https://client.uralsib.irsapp.ru']
 						]
 					]
 				]
